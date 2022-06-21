@@ -1,11 +1,15 @@
 <template>
   <div>{{ text }}</div>
+  <div>{{ something }}</div>
 </template>
 
 <script>
 
+import base from "@/mixins/base";
+
 export default {
   name: "App",
+  mixins:[base],
   components: {},
   data() {
     return {
