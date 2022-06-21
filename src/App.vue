@@ -1,16 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>{{ text }}</div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
   name: "App",
-  components: {
-    HelloWorld,
+  components: {},
+  data() {
+    return {
+      text: "Hello vue"
+    };
+  }, 
+  beforeCreate(){
+    console.log("beforeCreate", this.$data, this.$el);
   },
+  created(){
+    console.log("created", this.$data, this.$el);
+  },
+  beforeMount() {
+    console.log("beforeMount", this.$data, this.$el);
+  }
 };
 </script>
 
