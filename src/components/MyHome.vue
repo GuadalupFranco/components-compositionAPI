@@ -1,15 +1,18 @@
 <template>
-  <div>Hello</div>
+  <div>{{ obj }}</div>
 </template>
 
 <script> 
-import {onMounted } from "vue";
+import { reactive } from "vue"; // when using normal variables use ref
 
 export default {
-  setup() {
-    onMounted(() => {
-      console.log("mounted!");
-    });
+  setup() { 
+    const obj = reactive({ counter: 0});
+    setInterval(() => obj.counter++, 1000);
+
+    return {
+     obj,
+    };
   },
 };
 </script>
