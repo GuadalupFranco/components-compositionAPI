@@ -4,12 +4,16 @@
 
 <script>
 import MyHome from "./components/MyHome.vue";
+import { provide } from "vue";
 
 export default {
   name: "App",
   components: {
     MyHome,
   },
+  setup() {
+    provide("username", "frncorg");
+  }
 };
 </script>
 
